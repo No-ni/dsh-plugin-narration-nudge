@@ -1,0 +1,14 @@
+# dsh-plugin-narration-nudge — bundle patch
+#
+# 只做一件事：当模型「调了工具却没写正文」时，在**本轮末尾追加**一条提醒消息。
+# 它不向系统提示写入任何内容（除非显式开启 contract），因此不破坏前缀缓存。
+
+- insert:
+    - id: narration-nudge
+      name: dsh-plugin-narration-nudge
+      config:
+        enabled: true
+        language: zh
+        threshold: 1
+        maxPerTurn: 2
+        contract: off
